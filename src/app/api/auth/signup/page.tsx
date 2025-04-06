@@ -47,7 +47,7 @@ const SignUpPage = () => {
       });
 
       if (response.ok) {
-        router.push('/signin'); // Redirect to sign-in page after successful signup
+        router.push('/api/auth/signin'); // Redirect to sign-in page after successful signup
       } else {
         setError('Failed to sign up');
       }

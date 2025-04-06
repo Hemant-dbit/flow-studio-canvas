@@ -12,7 +12,7 @@ const Navbar = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleSignIn = () => {
-    router.push('/signin'); // This redirects programmatically
+    router.push('api/auth/signin'); // This redirects programmatically
   };
 
 

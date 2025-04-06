@@ -86,7 +86,7 @@ const SignInPage = () => {
 
           <p className="text-sm text-center mt-4 text-gray-600">
             Don’t have an account?{' '}
-            <Link href="/signup" className="text-indigo-600 underline">Sign up here</Link>
+            <Link href="/api/auth/signup" className="text-indigo-600 underline">Sign up here</Link>
           </p>
         </CardContent>
       </Card>

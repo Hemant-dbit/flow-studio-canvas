@@ -70,7 +70,7 @@ const ProfilePage = () => {
             onClick={() => router.push('/')} // Redirect to landing page
             className="w-full bg-gray-500 hover:bg-gray-600 text-white"
           >
-            Go to Landing Page
+            Go to Home Page
           </Button>
         </div>
       </div>
