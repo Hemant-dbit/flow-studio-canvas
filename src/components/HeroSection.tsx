@@ -5,6 +5,16 @@ import FlowDemo from './FlowDemo';
 import { motion } from 'framer-motion';
 
 const HeroSection = () => {
+  // Typing effect variants
+  const textVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 }
+  };
+  
+  // Create an array of letters from "With Visual Flows" for the typing effect
+  const withVisualFlowsText = "With Visual Flows";
+  const letters = Array.from(withVisualFlowsText);
+  
   return (
     <section className="pt-32 pb-16 md:pt-40 md:pb-24 relative overflow-hidden">
       {/* Background gradient circles */}
@@ -19,7 +29,24 @@ const HeroSection = () => {
           className="text-center max-w-4xl mx-auto mb-16"
         >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            <span className="gradient-text">Automate Your Tasks</span> With Visual Flows
+            <span className="gradient-text">Automate Your Tasks</span>{" "}
+            <span className="inline-flex">
+              {letters.map((letter, index) => (
+                <motion.span
+                  key={index}
+                  variants={textVariants}
+                  initial="hidden"
+                  animate="visible"
+                  transition={{
+                    duration: 0.3,
+                    delay: 0.5 + index * 0.1,
+                    ease: "easeOut"
+                  }}
+                >
+                  {letter === " " ? "\u00A0" : letter}
+                </motion.span>
+              ))}
+            </span>
           </h1>
           <motion.p 
             initial={{ opacity: 0 }}

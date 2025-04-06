@@ -105,45 +105,52 @@ const FlowDemo = () => {
             </motion.div>
           </div>
           
-          {/* Connection lines */}
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 1.2 }}
-            className="hidden md:block absolute top-1/2 left-1/3 w-1/6 h-px bg-gradient-to-r from-studio-300 to-flow-300 transform -translate-y-10"
-          >
-            <motion.div
-              animate={{ x: [0, 30, 0] }}
-              transition={{ 
-                duration: 2,
-                repeat: Infinity,
-                ease: "linear" 
-              }}
+          {/* Connection lines - FIXED POSITIONING */}
+          <div className="relative w-full h-10 my-2 hidden md:block">
+            {/* Left to center connection */}
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 1.2 }}
+              className="absolute top-1/2 left-1/4 w-1/4 h-px bg-gradient-to-r from-studio-300 to-flow-300"
             >
-              <ArrowRight className="absolute right-0 top-1/2 transform -translate-y-1/2 text-flow-400" />
+              <motion.div
+                animate={{ x: [0, 30, 0] }}
+                transition={{ 
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "linear" 
+                }}
+                className="relative"
+              >
+                <ArrowRight className="absolute top-0 right-0 transform -translate-y-1/2 text-flow-400" />
+              </motion.div>
             </motion.div>
-          </motion.div>
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 1.4 }}
-            className="hidden md:block absolute top-1/2 right-1/3 w-1/6 h-px bg-gradient-to-r from-flow-300 to-studio-300 transform -translate-y-10"
-          >
-            <motion.div
-              animate={{ x: [0, 30, 0] }}
-              transition={{ 
-                duration: 2,
-                repeat: Infinity,
-                ease: "linear",
-                delay: 0.5
-              }}
+            
+            {/* Center to right connection */}
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 1.4 }}
+              className="absolute top-1/2 left-1/2 w-1/4 h-px bg-gradient-to-r from-flow-300 to-studio-300"
             >
-              <ArrowRight className="absolute right-0 top-1/2 transform -translate-y-1/2 text-studio-400" />
+              <motion.div
+                animate={{ x: [0, 30, 0] }}
+                transition={{ 
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "linear",
+                  delay: 0.5
+                }}
+                className="relative"
+              >
+                <ArrowRight className="absolute top-0 right-0 transform -translate-y-1/2 text-studio-400" />
+              </motion.div>
             </motion.div>
-          </motion.div>
+          </div>
           
           {/* Additional nodes */}
-          <div className="hidden lg:grid grid-cols-3 gap-8 w-full mt-12">
+          <div className="hidden lg:grid grid-cols-3 gap-8 w-full mt-8">
             {/* Condition node */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
