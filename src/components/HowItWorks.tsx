@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { MousePointer, FileText, Play, Check } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const steps = [
   {
@@ -31,38 +32,54 @@ const steps = [
 
 const HowItWorks = () => {
   return (
-    <section id="how-it-works" className="section">
+    <section id="how-it-works" className="section py-20 md:py-28">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto mb-16"
+        >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             <span className="gradient-text">How StudioFlow Works</span>
           </h2>
           <p className="text-gray-600">
             Getting started with StudioFlow is easy. Follow these simple steps to create your first automation in minutes.
           </p>
-        </div>
+        </motion.div>
         
         <div className="relative">
           {/* Connecting line */}
           <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gray-200 transform -translate-x-1/2 hidden md:block"></div>
           
-          <div className="space-y-12 relative">
+          <div className="space-y-16 relative">
             {steps.map((step, index) => (
-              <div key={index} className="md:flex items-center">
+              <motion.div 
+                key={index} 
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="md:flex items-center"
+              >
                 <div className={`md:w-1/2 ${index % 2 === 0 ? 'md:pr-12 text-right' : 'md:pl-12 md:order-2'}`}>
                   <h3 className="text-2xl font-bold mb-3">{step.title}</h3>
                   <p className="text-gray-600">{step.description}</p>
                 </div>
                 
-                <div className={`mx-auto md:mx-0 my-6 md:my-0 relative z-10 ${index % 2 === 0 ? 'md:order-2' : 'md:pr-12'}`}>
+                <motion.div 
+                  className={`mx-auto md:mx-0 my-6 md:my-0 relative z-10 ${index % 2 === 0 ? 'md:order-2' : 'md:pr-12'}`}
+                  whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+                >
                   <div className={`w-16 h-16 rounded-full ${step.color} flex items-center justify-center shadow-lg`}>
                     {step.icon}
                     <span className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-white text-studio-600 flex items-center justify-center font-bold border-2 border-studio-600">
                       {index + 1}
                     </span>
                   </div>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             ))}
           </div>
         </div>
