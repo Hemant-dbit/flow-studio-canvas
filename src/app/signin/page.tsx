@@ -7,7 +7,7 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { FcGoogle } from 'react-icons/fc';
-
+import Link from 'next/link';
 const SignInPage = () => {
   const router = useRouter();
   const [email, setEmail] = useState('');
@@ -55,7 +55,7 @@ const SignInPage = () => {
             />
             <Input
               type="password"
-              placeholder="••••••••"
+              placeholder="Enter password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
@@ -86,7 +86,7 @@ const SignInPage = () => {
 
           <p className="text-sm text-center mt-4 text-gray-600">
             Don’t have an account?{' '}
-            <a href="#" className="text-indigo-600 underline">Sign up here</a>
+            <Link href="/signup" className="text-indigo-600 underline">Sign up here</Link>
           </p>
         </CardContent>
       </Card>

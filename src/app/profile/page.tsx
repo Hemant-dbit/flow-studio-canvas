@@ -3,7 +3,7 @@
 import { useSession, signOut } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
-import Image from 'next/image';
+// import Image from 'next/image';
 import { useEffect } from 'react';
 
 const ProfilePage = () => {
