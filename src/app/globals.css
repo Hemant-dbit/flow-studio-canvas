@@ -88,7 +88,7 @@
   }
 
   .animate-slide-in-delay {
-    animation: slide-in-delay 0.8s ease-out 0.5s both;
+    animation: slide-in-delay 2s ease-out 0.5s both;
   }
 
   .animate-float-up {
@@ -155,3 +155,5 @@
     animation: fade-in 0.5s ease-out forwards;
   }
 }
+
+

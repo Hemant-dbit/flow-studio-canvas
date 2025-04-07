@@ -25,7 +25,7 @@ const HeroSection = () => {
             drag-and-drop interface. Connect apps, automate workflows, and save time.
           </p>
 
-          <div className="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in-up delay-300">
+          <div className="flex flex-col sm:flex-row  gap-4 animate-fade-in-up delay-300">
             <Button className="btn-primary text-lg h-12 transition-transform duration-300 hover:scale-105">
               Get Started for Free
             </Button>
